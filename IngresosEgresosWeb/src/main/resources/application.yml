@@ -1,0 +1,23 @@
+# src/main/resources/application.yml
+logging:
+  level:
+    root: ERROR
+    org.springframework.web: ERROR
+    com.auth0.example: TRACE
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          auth0:
+            client-id: Ins3XUhn00iN0UOx0v8OSavlV7qFsk4t
+            client-secret: o63ug6LexwN6WcsVzFVKb9xe_UxrZCXSggq0pLdugJkce294hu1HaUVYgSdLfzyl
+            scope:
+              - openid
+              - profile
+              - email
+        provider:
+          auth0:
+            # trailing slash is important!
+            issuer-uri: https://dev-vso2zipm.us.auth0.com/
