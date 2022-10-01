@@ -1,0 +1,7 @@
+{
+  "name": "Spring Boot Heroku Demo,IngresosEgresosWeb ",
+  "description": "This is a small demo application for showing how to run a Spring Boot application on Heroku.",
+  "repository": "https://github.com/dacoxyz/UdeAJava/tree/main/IngresosEgresosWeb",
+  "image": "heroku/java",
+  "addons": [ "heroku-postgresql" ]
+}
