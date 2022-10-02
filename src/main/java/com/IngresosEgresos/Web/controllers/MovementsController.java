@@ -1,6 +1,8 @@
 package com.IngresosEgresos.Web.controllers;
+import com.IngresosEgresos.Web.entities.Empresa;
 import com.IngresosEgresos.Web.entities.MovimientoDinero;
 import com.IngresosEgresos.Web.services.TransactionServices;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -24,12 +26,15 @@ public class MovementsController {
         //return “200”;
     }
 
-    @PostMapping("/enterprises/{id}/movements")
-    public MovimientoDinero crearTransaction(@RequestBody MovimientoDinero pTx)
+    @PostMapping("/AddMovements")
+    public RedirectView crearTransaction(@ModelAttribute MovimientoDinero pMovimientoDinero, Model pModel) //RequestBody type JSON
     {
-        return this.serviceTransaction.crearTransaction(pTx);
+        pModel.addAttribute(pMovimientoDinero);
+        this.serviceTransaction.crearTransaction(pMovimientoDinero);
+        return new RedirectView("/transacciones");
         //return “200”;
     }
+
 
     //@PatchMapping("/enterprises/{id}/movements")
     //public String consultarMovimientos2(@PathVariable long id)

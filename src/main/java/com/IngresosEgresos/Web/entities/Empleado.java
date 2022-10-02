@@ -7,7 +7,7 @@ import java.util.Date;
 public class Empleado{
     //Atributos
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
     @Column(name = "email")
     public String email;
@@ -25,7 +25,7 @@ public class Empleado{
 
 
     @Column(name = "idperfil")
-    public String idperfil;
+    public long idperfil;
 
     //Basados en Clases
     /*
@@ -49,11 +49,11 @@ public class Empleado{
     }
 
     //Getters y Setters
-    public String getIdperfil() {
+    public long getIdperfil() {
         return idperfil;
     }
 
-    public void setIdperfil(String idperfil) {
+    public void setIdperfil(long idperfil) {
         this.idperfil = idperfil;
     }
     public String getNombre() {

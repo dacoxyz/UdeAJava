@@ -107,7 +107,7 @@
     <h2 class="mb-3">Transacciones</h2>
   </div>
 
-<form th:action="@{/transaction}" th:method="post" th:object="${Transaccion}">
+<form th:action="@{/AddMovements}" th:method="post" th:object="${Transaccion}">
   <div class="form-group">
     <label for="amount">Monto</label>
     <input type="text" class="form-control" id="amount" th:field="*{amount}" aria-describedby="amountHelp" placeholder="Enter amount">

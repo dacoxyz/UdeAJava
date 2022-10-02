@@ -9,7 +9,7 @@ public class MovimientoDinero {
 
     //Atributos
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public long id;
     @Column(name = "concept")
     public String concept;
