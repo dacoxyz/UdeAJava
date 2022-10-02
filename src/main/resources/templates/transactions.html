@@ -136,9 +136,10 @@
       </tbody>
       <tfoot>
       <tr>
-        <td rowspan="4">
-          Total:
-        </td>
+        <td colspan="3" />
+        <td>Total2<b th:text="${#aggregates.sum(Transaccion.![amount])}" /></td>
+
+
       </tr>
       </tfoot>
     </table>

@@ -137,10 +137,10 @@
           <td th:text="${empleado.phone}"></td>
           <td>
             <div align="right">
-              <form th:action="@{/users/{id}(id=${empleado.id})}" th:method="patch" >
+              <form th:action="@{/user/{id}(id=${empleado.id})}" th:method="patch" >
               <button type="submit" class="btn btn-primary">Editar</button>
               </form>
-              <form th:action="@{/users/{id}(id=${empleado.id})}" th:method="delete" >
+              <form th:action="@{/user/{id}(id=${empleado.id})}" th:method="delete" >
                 <button type="submit" class="btn btn-danger">Eliminar</button>
               </form>
             </div>
