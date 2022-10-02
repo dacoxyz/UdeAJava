@@ -1,7 +1,9 @@
 package com.IngresosEgresos.Web.controllers;
+import com.IngresosEgresos.Web.entities.Empleado;
 import com.IngresosEgresos.Web.entities.Empresa;
 import com.IngresosEgresos.Web.services.EnterpriseServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.lang.constant.Constable;
@@ -11,6 +13,7 @@ import org.springframework.http.ResponseEntity;
 //import java.util.HashMap;
 //import java.util.Map;
 import com.IngresosEgresos.Web.repositories.EnterpriseRepository;
+import org.springframework.web.servlet.view.RedirectView;
 
 
 @CrossOrigin(origins = {"http://localhost:8080", "https://ingresosegresos2022.herokuapp.com"})
@@ -34,13 +37,15 @@ public class EnterprisesController {
     return this.serviceEnterprise.consultarEmpresas();
     //return 200;
     }
-    @PostMapping("/AddEnterprises")
-    public Empresa CrearEnterprise(@RequestBody Empresa pEmpresa)
-    {
-        return this.serviceEnterprise.crearEmpresa(pEmpresa);
-        //return 200;
-    }
 
+    @PostMapping("/AddEnterprises")
+    public RedirectView CrearEnterprise(@ModelAttribute Empresa pEmpresa, Model pModel) //RequestBody type JSON
+    {
+        pModel.addAttribute(pEmpresa);
+        this.serviceEnterprise.crearEmpresa(pEmpresa);
+        return new RedirectView("/empresas");
+        //return “200”;
+    }
 
     @GetMapping("/enterprisesTest/{id}")
     public Constable String (@PathVariable long id)
@@ -59,10 +64,12 @@ public class EnterprisesController {
         return this.serviceEnterprise.consultarUnaEmpresa(id);
 //        return 200;
     }
+
     @DeleteMapping("/enterprises/{id}")
-    public String borrarEnterprise(@PathVariable long id)
+    public RedirectView borrarEnterprise(@PathVariable ("id") long id)
     {
         this.serviceEnterprise.eliminarUnaEmpresa(id);
-        return "200";
+        return new RedirectView("/empresas");
     }
+
 }

@@ -117,6 +117,7 @@
             <th scope="col">Nombre</th>
             <th scope="col">Dirección</th>
             <th scope="col">Teléfono</th>
+            <th scope="col">Acción</th>
         </tr>
         </thead>
         <tbody>
@@ -125,6 +126,16 @@
             <td th:text="${Empresa.name}"></td>
             <td th:text="${Empresa.address}"></td>
             <td th:text="${Empresa.phone}"></td>
+            <td>
+                <div align="right">
+                    <form th:action="@{/enterprises/{id}(id=${Empresa.id})}" th:method="patch" >
+                        <button type="submit" class="btn btn-primary">Editar</button>
+                    </form>
+                    <form th:action="@{/enterprises/{id}(id=${Empresa.id})}" th:method="delete" >
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </div>
+            </td>
         </tr>
         </tbody>
     </table>
