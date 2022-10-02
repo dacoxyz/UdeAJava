@@ -5,7 +5,8 @@ import com.IngresosEgresos.Web.services.UserServices;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
-@CrossOrigin(origins = "http://localhost:8080")
+
+@CrossOrigin(origins = {"http://localhost:8080", "https://ingresosegresos2022.herokuapp.com"})
 @RestController
 public class UsersController {
 

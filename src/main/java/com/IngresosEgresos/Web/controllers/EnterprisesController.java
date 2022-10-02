@@ -12,7 +12,8 @@ import org.springframework.http.ResponseEntity;
 //import java.util.Map;
 import com.IngresosEgresos.Web.repositories.EnterpriseRepository;
 
-@CrossOrigin(origins = "http://localhost:8080")
+
+@CrossOrigin(origins = {"http://localhost:8080", "https://ingresosegresos2022.herokuapp.com"})
 @RestController
 public class EnterprisesController {
     @Autowired

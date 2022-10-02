@@ -7,6 +7,7 @@ import org.springframework.web.servlet.view.RedirectView;
 import java.util.List;
 
 
+@CrossOrigin(origins = {"http://localhost:8080", "https://ingresosegresos2022.herokuapp.com"})
 @RestController
 public class MovementsController {
 

@@ -9,6 +9,7 @@ import java.util.Optional;
 
 
 
+@CrossOrigin(origins = {"http://localhost:8080", "https://ingresosegresos2022.herokuapp.com"})
 @RestController
 public class ProfilesController {
         ProfileServices service;
